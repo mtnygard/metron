@@ -2,11 +2,21 @@
 
 ## Major items
 
+### Event monitoring
 1. Pick a monitoring server and add it to cookbooks.
 1. Allow clients to announce themselves to the server.
+
+### Client side
 1. Write a client-side cookbook for use in chef-solo (take an IP addr
 or DNS name for loc'n of server). Install statsd.
 1. Make a default config for Ruby on Rails apps. Automate in a cookbook.
+
+Open Q: how should
+clients locate the server? Static config, or some rendezvous
+location?
+
+### Control
+1. Add mcollectived.
 
 ## Minor items
 
