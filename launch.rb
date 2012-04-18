@@ -1,5 +1,6 @@
-#! /usr/bin/env ruby -rubygems
+#!/usr/bin/env ruby
 
+require 'rubygems'
 require 'yaml'
 require 'fog'
 require 'net/sftp'
@@ -53,14 +54,14 @@ end
 
 Net::SSH.start( server.dns_name, 'ubuntu', :keys => [ ssh_key_file ], :paranoid => false ) do |ssh|
   puts "Uploading payload files"
-  
+
   upload(ssh, "tmp/chef-solo.tgz", "/tmp/chef-solo.tgz")
   upload(ssh, "config/solo.rb", "/home/ubuntu/solo.rb")
   upload(ssh, "config/dna.json", "/home/ubuntu/dna.json")
   upload(ssh, "config/bootstrap.sh", "/home/ubuntu/bootstrap.sh")
 
   puts "Running bootstrap"
-  
+
   ssh.exec!("sudo sh ./bootstrap.sh") do |channel, stream, data|
     puts data
   end
