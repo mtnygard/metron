@@ -7,10 +7,7 @@ and QA environments.
 
 ## Bootstrap your environment
 
-    rvm use 1.8.7
-    rvm gemset create metron
-    gem install bundler
-    bundle install
+    ./scripts/bootstrap
 
 ## Configure for EC2
 
@@ -33,7 +30,7 @@ And so on.
 
 ## Commands
 
-scripts/launch.rb 
+./launch.rb
 Bootstrap and configure a new instance on EC2.
 
 vagrant up
