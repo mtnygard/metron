@@ -8,6 +8,7 @@ and QA environments.
 ## Bootstrap your environment
 
     ./scripts/bootstrap
+    . .rvmrc
 
 ## Configure for EC2
 
