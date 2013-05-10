@@ -2,8 +2,6 @@ Vagrant.configure("2") do |config|
   config.vm.box = "precise64"
 
   config.vm.provider :aws do |aws, override|
-    config.vm.box = "dummy"
-
     aws.access_key_id = IO.read("config/access_key").chomp
     aws.secret_access_key = IO.read("config/secret_key").chomp
     aws.keypair_name = IO.read("config/key_name").chomp
