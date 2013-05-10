@@ -8,7 +8,6 @@ and QA environments.
 ## Bootstrap your environment
 
     ./scripts/bootstrap
-    . .rvmrc
 
 ## Configure for EC2
 
@@ -31,7 +30,7 @@ And so on.
 
 ## Commands
 
-./launch.rb
+vagrant up --provider=aws
 Bootstrap and configure a new instance on EC2.
 
 vagrant up
@@ -39,4 +38,5 @@ Bootstrap and configure a virtual machine on your local box.
 
 # GUI
 
-The Graphite GUI will be available on port 80 after boot. When using Vagrant, the GUI will be on port 80 of 33.33.33.10.
+The Graphite GUI will be available on port 80 after boot. When using a
+local VM, the GUI will be at http://33.33.33.10/.
