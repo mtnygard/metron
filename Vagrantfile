@@ -13,6 +13,8 @@ Vagrant.configure("2") do |config|
       "Owner" => ENV["USER"]
     }
 
+    aws.security_groups = [ "metron-security-group" ]
+
     override.ssh.username = "ubuntu"
     override.ssh.private_key_path = "config/identity.pem"
   end
