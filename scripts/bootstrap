@@ -16,11 +16,11 @@ then
     exit
 fi
 
-function check_plugin {
+function ensure_plugin {
     O=`vagrant plugin list | grep $1`
     if [ -z "$O" ]
     then
-        vagrant plugin install vagrant-aws
+        vagrant plugin install "$1"
     fi
 }
 
