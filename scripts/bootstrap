@@ -24,9 +24,9 @@ function check_plugin {
     fi
 }
 
-ensure_plugin "vagrant-aws"
-ensure_plugin "vagrant-berkshelf"
-ensure_plugin "vagrant-omnibus"
+check_plugin "vagrant-aws"
+check_plugin "vagrant-berkshelf"
+check_plugin "vagrant-omnibus"
 
 # Add boxes, all with the same name, but for different providers
 # For AWS
