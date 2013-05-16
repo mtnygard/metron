@@ -16,17 +16,17 @@ then
     exit
 fi
 
-function check_plugin {
+function ensure_plugin {
     O=`vagrant plugin list | grep $1`
     if [ -z "$O" ]
     then
-        vagrant plugin install vagrant-aws
+        vagrant plugin install "$1"
     fi
 }
 
-check_plugin "vagrant-aws"
-check_plugin "vagrant-berkshelf"
-check_plugin "vagrant-omnibus"
+ensure_plugin "vagrant-aws"
+ensure_plugin "vagrant-berkshelf"
+ensure_plugin "vagrant-omnibus"
 
 # Add boxes, all with the same name, but for different providers
 # For AWS
